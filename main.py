@@ -25,7 +25,7 @@ def draw_speedometer():
         else:
             x1 = 200 + 155 * math.cos(math.radians(angle))
             y1 = 200 + 155 * math.sin(math.radians(angle))
-            speedometer.create_line(x1, y1, x, y, fill="red", width=0.5)
+            speedometer.create_line(x1, y1, x, y, fill="blue", width=0.5)
         
 my_throttle = tk.Scale(root, from_=100, to=0, orient="vertical", length=300, command=lambda val: draw_needle(int(val)))
 def draw_needle(value):
