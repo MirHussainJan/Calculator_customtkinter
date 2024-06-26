@@ -39,17 +39,6 @@ def calculate():
     except Exception as e:
         Screen.configure(text=f"Error: {str(e)}")
 
-def underroot():
-    current_text = Screen.cget("text")
-    current_text = eval(current_text)
-    try:
-        current_value = float(current_text)
-        new_value = math.sqrt(current_value)
-        new_text = str(new_value)
-    except ValueError:
-        new_text = "Imaginary"
-    Screen.configure(text=new_text)
-
 def delete():
     current_text = Screen.cget("text")
     new_text = current_text[:-1]
