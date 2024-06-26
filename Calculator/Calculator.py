@@ -24,11 +24,13 @@ def calculate():
 
         else:
             result = eval(current_text)  # Evaluate the whole expression if no √ symbol
-        
         if isinstance(result, int):
             formatted_str = str(result)  # Convert integer to string
         else:
             formatted_str = "{:.2f}".format(result)  # Format float to 2 decimal places
+            
+        if formatted_str.endswith(".00"):
+            formatted_str = str(int(float(formatted_str))) 
         
         Screen.configure(text=formatted_str)
         
@@ -36,8 +38,8 @@ def calculate():
         Screen.configure(text="Syntax Error!")
     except ZeroDivisionError:
         Screen.configure(text="Division by zero!")
-    except Exception as e:
-        Screen.configure(text=f"Error: {str(e)}")
+    except:
+        Screen.configure(text="Syntax Error!")
 
 def delete():
     current_text = Screen.cget("text")
